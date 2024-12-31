@@ -8,3 +8,4 @@ reportlab
 six
 webencodings
 xhtml2pdf
+gunicorn
