@@ -1,14 +1,12 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  # Import 'include' and 'path' from 'django.urls'
 from selection import views
-from django.conf.urls import include, url
 from django.conf import settings
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # url(r'^', include(('selection.urls', 'selection'), namespace='selection')),
-    url(r'^guest/', include('guest.urls', namespace='guest')),
+    # Using path() instead of url()
+    path('guest/', include('guest.urls', namespace='guest')),  # Keep this line as it is
     path('', views.start, name='start'),
     path('hms/', views.home, name='register'),
     path('reg_form/', views.register, name='reg_form'),
